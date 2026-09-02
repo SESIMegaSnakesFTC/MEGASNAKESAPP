@@ -114,7 +114,7 @@ fun CameraScreen(onBack: () -> Unit = {}) {
                     .align(Alignment.TopStart)
                     .padding(16.dp)
             ) {
-                Text("←", color = Color.White, fontSize = 28.sp)
+                Text("←", color = Color.White, fontSize = 40.sp)
             }
         }
     }

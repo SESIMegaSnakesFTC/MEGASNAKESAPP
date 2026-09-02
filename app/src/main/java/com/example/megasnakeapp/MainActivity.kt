@@ -114,7 +114,10 @@ fun AppFlow(modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
         when (screen) {
             Screen.CONNECT -> ConnectScreen(onReady = { screen = Screen.COMMANDS })
-            Screen.COMMANDS -> ComandosScreen(onNext = { screen = Screen.CAMERA })
+            Screen.COMMANDS -> ComandosScreen(
+                onBack = { screen = Screen.CONNECT },
+                onNext = { screen = Screen.CAMERA }
+            )
             Screen.CAMERA -> CameraScreen(onBack = { screen = Screen.CONNECT })
         }
     }

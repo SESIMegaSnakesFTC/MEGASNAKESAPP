@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,13 +21,22 @@ val MegaGreen = Color(0xFF1E5631)
 private val ButtonGreen = Color(0xFF66BB6A)
 
 @Composable
-fun ComandosScreen(onNext: () -> Unit) {
+fun ComandosScreen(onBack: () -> Unit, onNext: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MegaGreen)
             .padding(24.dp)
     ) {
+        IconButton(
+            onClick = onBack,
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(top = 16.dp)
+        ) {
+            Text("←", color = Color.White, fontSize = 40.sp)
+        }
+
         Image(
             painter = painterResource(id = R.drawable.logo_transparente),
             contentDescription = null,
@@ -42,7 +52,8 @@ fun ComandosScreen(onNext: () -> Unit) {
                 text = "COMANDOS",
                 color = Color.White,
                 fontSize = 28.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
             )
 
             Spacer(modifier = Modifier.height(24.dp))
