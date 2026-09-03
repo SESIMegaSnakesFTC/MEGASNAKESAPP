@@ -16,7 +16,7 @@ private const val PINKY_TIP = 20
 private const val PINKY_PIP = 18
 
 private const val CONFIRMATION_MS = 2000L
-private const val THUMB_SIDE_THRESHOLD = 0.2f // ajuste se precisar (0.3 a 0.7)
+private const val THUMB_SIDE_THRESHOLD = 0.17f // ajuste se precisar (0.3 a 0.7)
 
 private var allDownSince: Long = -1L
 private var pendingGesture: String = "NONE"
