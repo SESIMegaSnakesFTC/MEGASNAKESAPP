@@ -15,7 +15,7 @@ class UdpSender(
     suspend fun send(code: Int) = withContext(Dispatchers.IO) {
         try {
             val address = InetAddress.getByName(ip)
-            val data = byteArrayOf(code.toByte())
+            val data = code.toString().toByteArray()
             val packet = DatagramPacket(data, data.size, address, port)
             socket.send(packet)
         } catch (e: Exception) {
