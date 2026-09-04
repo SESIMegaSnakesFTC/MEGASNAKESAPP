@@ -15,7 +15,7 @@ private const val RING_PIP = 14
 private const val PINKY_TIP = 20
 private const val PINKY_PIP = 18
 
-private const val CONFIRMATION_MS = 2000L
+private const val CONFIRMATION_MS = 500L
 private const val THUMB_SIDE_THRESHOLD = 0.17f // ajuste se precisar (0.3 a 0.7)
 
 private var allDownSince: Long = -1L
@@ -72,7 +72,7 @@ private fun rawGesture(result: HandLandmarkerResult): String {
         fingersUp == 0 && !thumbExtended -> {
             val now = System.currentTimeMillis()
             if (allDownSince == -1L) allDownSince = now
-            if (now - allDownSince > 2000) "PARA_TRAS" else "PARAR"
+            if (now - allDownSince > 1100) "PARA_TRAS" else "PARAR"
         }
         else -> {
             allDownSince = -1L
